@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import ThemeProvider from "@/app/theme-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,16 +19,36 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
+  section,
+  profile
 }: Readonly<{
-  children: React.ReactNode;
+  section: React.ReactNode,
+  profile: React.ReactNode,
 }>) {
+
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-zinc-800 dark:bg-zinc-950 dark:text-zinc-100 flex flex-col items-center`}
       >
-        {children}
+        <ThemeProvider>
+          <div className="xl:flex xl:flex-row xl:w-full xl:max-w-[1200px] lg:max-w-[1000px] md:max-w-[700px] sm:max-w-[600] sm:mx-0 mx-4 mt-12 xl:space-x-4 xl:space-y-0 space-y-4">
+
+            {/* Profile */}
+            {/* <aside className="flex-none"> */}
+            <div className="xl:flex-none xl:w-1/4 border h-fit rounded-xl dark:border-zinc-700 dark:bg-zinc-900 border-zinc-400">
+              {profile}
+            </div>
+
+
+            {/* Section */}
+            <div className="xl:flex-1 border rounded-xl dark:border-zinc-700 dark:bg-zinc-900 border-zinc-400">
+              {section}
+            </div>
+
+          </div>
+        </ThemeProvider>
+
       </body>
     </html>
   );
