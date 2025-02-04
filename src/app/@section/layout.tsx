@@ -16,7 +16,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <Link className={cx(path == "/" ? activeClasses : inactiveClasses, "font-bold font-header")} href="/">About</Link>
         <Link className={cx(path == "/resume" ? activeClasses : inactiveClasses, "font-bold font-header")} href="/resume">Resume</Link>
         <Link className={cx(path == "/blog" ? activeClasses : inactiveClasses, "font-bold font-header")} href="/blog">Blog</Link>
-        <Link className={cx(path == "/portfolio" ? activeClasses : inactiveClasses, "font-bold font-header")} href="/portfolio">Portfolio</Link>
+        {/* <Link className={cx(path == "/portfolio" ? activeClasses : inactiveClasses, "font-bold font-header")} href="/portfolio">Portfolio</Link> */}
+        <Link className={cx(path == "/contact" ? activeClasses : inactiveClasses, "font-bold font-header")} href="/contact">Contact</Link>
       </nav >
       {children}
     </>

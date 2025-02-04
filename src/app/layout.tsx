@@ -42,7 +42,7 @@ export default function RootLayout({
 
 
             {/* Section */}
-            <div className="xl:overflow-y-scroll xl:relative">
+            <div className="xl:overflow-y-scroll xl:relative w-full">
 
               <div className="xl:flex-1 border rounded-xl dark:border-zinc-700 dark:bg-zinc-900 border-zinc-400">
                 {section}
