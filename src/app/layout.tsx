@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Open_Sans, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import ThemeProvider from "@/app/theme-provider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+const openSans = Open_Sans({
+  variable: "--font-open-sans",
+  subsets: ['latin']
+})
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const sourceSans = Source_Sans_3({
+  variable: "--font-source-sans",
+  subsets: ['latin']
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -29,10 +29,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-zinc-800 dark:bg-zinc-950 dark:text-zinc-100 flex flex-col items-center`}
+        className={`${openSans.variable} ${sourceSans.variable} antialiased bg-white text-zinc-800 dark:bg-zinc-950 dark:text-zinc-100 flex flex-col items-center xl:h-lvh`}
       >
         <ThemeProvider>
-          <div className="xl:flex xl:flex-row xl:w-full xl:max-w-[1200px] lg:max-w-[1000px] md:max-w-[700px] sm:max-w-[600] sm:mx-0 mx-4 mt-12 xl:space-x-4 xl:space-y-0 space-y-4">
+          <div className="xl:flex xl:flex-row sm:w-full xl:max-w-[1200px] lg:max-w-[1000px] md:max-w-[700px] sm:max-w-[600] sm:mx-0 mx-4 mt-12 xl:space-x-4 xl:space-y-0 space-y-4 md:mb-12 mb-20 xl:h-lvh xl:overflow-hidden">
 
             {/* Profile */}
             {/* <aside className="flex-none"> */}
@@ -42,9 +42,15 @@ export default function RootLayout({
 
 
             {/* Section */}
-            <div className="xl:flex-1 border rounded-xl dark:border-zinc-700 dark:bg-zinc-900 border-zinc-400">
-              {section}
+            <div className="xl:overflow-y-scroll xl:relative">
+
+              <div className="xl:flex-1 border rounded-xl dark:border-zinc-700 dark:bg-zinc-900 border-zinc-400">
+                {section}
+              </div>
+
+              <div className="xl:inline-block xl:sticky xl:bottom-0 xl:w-full xl:h-20 bg-linear-to-b from-transparent to-zinc-950 hidden" />
             </div>
+
 
           </div>
         </ThemeProvider>

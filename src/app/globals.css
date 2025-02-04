@@ -12,6 +12,9 @@
   --color-primary-800: #17584f;
   --color-primary-900: #184942;
   --color-primary-950: #072c28;
+
+  --font-header: "Open Sans";
+  --font-paragraph: "Source Sans 3"
 }
 
 :root {
@@ -28,4 +31,8 @@
   --zinc-900: #18181b;
   --zinc-950: #09090b;
   --zinc-950: #0e0e11;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
