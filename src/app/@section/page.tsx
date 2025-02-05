@@ -1,3 +1,5 @@
+import { ApachePulsarIcon, ApacheSparkIcon, AWSIcon, CSHarpIcon, GodotIcon, JavaIcon, KotlinIcon, NextJSIcon, ReactIcon, TailwindCSSIcon, UnityIcon } from "../icons";
+
 export default function About() {
     return (
         <div className="my-6 mx-8 space-y-8">
@@ -30,17 +32,30 @@ export default function About() {
 
                     <ExpertiseCard title="DATA ENGINEERING" tags={[
                         {
-                            name: "Kotlin/Java",
-                            link: "https://kotlinlang.org/"
+                            name: "Kotlin",
+                            link: "https://kotlinlang.org/",
+                            icon: KotlinIcon
+                        },
+                        {
+                            name: "Java",
+                            link: "https://www.java.com/en/",
+                            icon: JavaIcon
                         },
                         {
                             name: "AWS",
-                            link: "https://aws.amazon.com/"
+                            link: "https://aws.amazon.com/",
+                            icon: AWSIcon
                         },
                         {
-                            name: "Apache",
-                            link: "https://www.apache.org/"
-                        }
+                            name: "Apache Spark",
+                            link: "https://spark.apache.org/",
+                            icon: ApacheSparkIcon
+                        },
+                        {
+                            name: "Apache Pulsar",
+                            link: "https://pulsar.apache.org/",
+                            icon: ApachePulsarIcon
+                        },
                     ]}>
                         Specialized in designing and implementing scalable data tools and efficient
                         ETL pipelines, leveraging cloud-based technologies to streamline data flow
@@ -50,15 +65,18 @@ export default function About() {
                     <ExpertiseCard title="FULLSTACK DEVELOPMENT" tags={[
                         {
                             name: "React",
-                            link: "https://react.dev/"
+                            link: "https://react.dev/",
+                            icon: ReactIcon
                         },
                         {
                             name: "NextJS",
-                            link: "https://nextjs.org/"
+                            link: "https://nextjs.org/",
+                            icon: NextJSIcon
                         },
                         {
                             name: "TailwindCSS",
-                            link: "https://tailwindcss.com/"
+                            link: "https://tailwindcss.com/",
+                            icon: TailwindCSSIcon
                         }
                     ]}>
                         Passionate for full-stack development, I create dynamic and
@@ -68,15 +86,18 @@ export default function About() {
                     <ExpertiseCard title="GAME DEVELOPMENT" tags={[
                         {
                             name: "Godot",
-                            link: "https://godotengine.org/"
+                            link: "https://godotengine.org/",
+                            icon: GodotIcon
                         },
                         {
                             name: "Unity",
-                            link: "https://unity.com/"
+                            link: "https://unity.com/",
+                            icon: UnityIcon
                         },
                         {
                             name: "C#",
-                            link: "https://learn.microsoft.com/en-us/dotnet/csharp/"
+                            link: "https://learn.microsoft.com/en-us/dotnet/csharp/",
+                            icon: CSHarpIcon
                         }
                     ]}>
                         As a hobbyist, I’m developing an open-world tactics RPG, <span className="font-semibold">The Far Reaches</span>,
@@ -93,7 +114,8 @@ function ExpertiseCard({ title, children, tags }: {
     children: React.ReactNode,
     tags: {
         name: string,
-        link: string
+        link: string,
+        icon: React.FunctionComponent<{ className: string; }>
     }[]
 }) {
 
@@ -104,7 +126,10 @@ function ExpertiseCard({ title, children, tags }: {
             <div className="flex flex-row shrink gap-2 mt-3">
                 {tags.map((tag) => {
                     return (
-                        <a key={tag.name} href={tag.link} className="dark:bg-primary-400/60 bg-primary-500 text-zinc-50 rounded-full text-center px-3 font-header">{tag.name}</a>
+                        <a key={tag.name} href={tag.link} className="group dark:bg-primary-400/60 bg-primary-500 text-zinc-50 rounded-full text-center h-8 w-8 hover:w-auto font-header flex flex-row items-center ">
+                            <tag.icon className="ml-1.5 w-5 h-5 fill-zinc-50" />
+                            <p className="group-hover:inline-block group-hover:w-fit hidden font-paragraph px-2 transition-all">{tag.name}</p>
+                        </a>
                     )
                 })}
             </div>

@@ -1,3 +1,4 @@
+import { AWSIcon, RITIcon, ToastIcon } from '@/app/icons'
 import cx from 'classnames'
 
 type Role = {
@@ -8,6 +9,7 @@ type Role = {
 }
 
 type Job = {
+  icon?: React.FunctionComponent<{ className: string; }>,
   company: string,
   description: string,
   location: string,
@@ -28,7 +30,7 @@ export default function Resume() {
 
           <div className="space-x-2 hidden lg:flex lg:flex-row ">
 
-            <button className="flex flex-row items-center min-w-30 py-1 rounded-lg dark:bg-zinc-700">
+            {/* <button className="flex flex-row items-center min-w-30 py-1 rounded-lg dark:bg-zinc-700">
               <div className="w-6 h-6 dark:bg-zinc-500 mx-1" />
               <p className="grow pr-1 font-header text-md font-semibold dark:text-zinc-200">
                 Resume
@@ -40,7 +42,7 @@ export default function Resume() {
               <p className="grow pr-1 font-header text-md font-semibold dark:text-zinc-200">
                 CV
               </p>
-            </button>
+            </button> */}
           </div>
         </div>
 
@@ -54,7 +56,9 @@ export default function Resume() {
 
         <div className='font-paragraph flex flex-row items-center space-x-4 mt-2'>
 
-          <div className='w-20 h-20 rounded-lg dark:bg-zinc-600' />
+          <div className='w-20 h-20 rounded-lg dark:bg-zinc-600 flex flex-row justify-evenly items-center'>
+            <RITIcon className='w-18 h-18 fill-zinc-50' />
+          </div>
 
           <div>
             <p className='font-header text-lg font-semibold'>Rochester Institute of Technology</p>
@@ -74,6 +78,7 @@ export default function Resume() {
 
         <JobSection
           job={{
+            icon: ToastIcon,
             company: "Toast",
             description: "All-in-One Restaurant Software",
             location: "Boston, MA",
@@ -102,6 +107,7 @@ export default function Resume() {
 
         <JobSection
           job={{
+            icon: RITIcon,
             company: "Rochester Institute of Technology",
             description: "Upstate New York University",
             location: "Rochester, NY",
@@ -133,6 +139,7 @@ export default function Resume() {
 
         <JobSection
           job={{
+            icon: AWSIcon,
             company: "Amazon Web Services",
             description: "Cloud-based Computing",
             location: "Seattle, WA",
@@ -196,7 +203,9 @@ function JobSection({ job }: {
     <div className="mt-3">
 
       <div className="flex flex-row items-center space-x-2">
-        <div className="w-12 h-12 rounded-lg bg-zinc-600" />
+        <div className="w-12 h-12 rounded-lg bg-primary-500/90 flex flex-row justify-evenly items-center" >
+          {job.icon && <job.icon className="w-10 h-10 fill-zinc-50" />}
+        </div>
 
         <div className="space-y-[-4px]">
           <h3 className="font-header text-lg font-semibold dark:text-zinc-50">{job.company}</h3>
@@ -210,12 +219,12 @@ function JobSection({ job }: {
 
           return (
             <>
-              <div key={role.title + "-a"} className="sm:flex flex-col items-center justify-self-center h-full hidden">
+              <div key={role.title + "-a" + idx} className="sm:flex flex-col items-center justify-self-center h-full hidden">
                 <div className={cx("w-1 bg-zinc-50/20 mb-2 rounded-b", idx == 0 ? "rounded mt-2 h-4" : "h-6")}></div>
                 <div className="w-3 h-3 bg-primary-300/80 rounded-sm"></div>
                 <div className={cx("w-1 grow bg-zinc-50/20 mt-2 rounded-t", idx == job.roles.length - 1 ? "rounded mb-2" : "")}></div>
               </div>
-              <div key={role.title + "-b"} className="font-paragraph mt-2">
+              <div key={role.title + "-b" + idx} className="font-paragraph mt-2">
                 <div className="mt-2">
                   <div className="space-y-[-3px]">
                     <h4 className="font-semibold">{role.title}</h4>
