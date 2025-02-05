@@ -4,7 +4,7 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
 import cx from 'classnames'
 
-type Alert = "success" | "error"
+// type Alert = "success" | "error"
 
 type Inputs = {
     name: string
@@ -21,20 +21,20 @@ export default function Contact() {
         formState: { errors },
     } = useForm<Inputs>();
     const [disabled, setDisabled] = useState(false);
-    const [_, setAlertInfo] = useState({
-        display: true,
-        message: 'Hello',
-        type: 'success',
-    });
+    // const [_, setAlertInfo] = useState({
+    //     display: true,
+    //     message: 'Hello',
+    //     type: 'success',
+    // });
 
-    const toggleAlert = (message: string, type: Alert) => {
-        setAlertInfo({ display: true, message, type });
+    // const toggleAlert = (message: string, type: Alert) => {
+    //     setAlertInfo({ display: true, message, type });
 
-        // Hide alert after 5 seconds
-        setTimeout(() => {
-            setAlertInfo({ display: false, message: '', type: '' });
-        }, 5000);
-    };
+    //     // Hide alert after 5 seconds
+    //     setTimeout(() => {
+    //         setAlertInfo({ display: false, message: '', type: '' });
+    //     }, 5000);
+    // };
 
     const onSubmit: SubmitHandler<Inputs> = async (data) => {
         const { name, email, message } = data
@@ -58,11 +58,11 @@ export default function Contact() {
             );
 
             // Display success alert
-            toggleAlert('Message sent sucessfully', 'success');
+            // toggleAlert('Message sent sucessfully', 'success');
         } catch (e) {
             console.error(e);
             // Display error alert
-            toggleAlert('Error sending message', 'error');
+            // toggleAlert('Error sending message', 'error');
         } finally {
             // Re-enable form submission
             setDisabled(false);
