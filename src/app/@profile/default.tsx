@@ -1,11 +1,12 @@
+import Image from 'next/image'
+
 export default function Profile() {
     return (
         <div className="flex flex-row space-x-6 xl:p-8 p-4 xl:space-x-0 xl:flex-col xl:items-center xl:px-4 xl:py-8 xl:space-y-6">
 
             {/* Picture */}
-            <img src="/prof-pic.webp" className="xl:w-50 xl:h-50 w-30 h-30 bg-zinc-700 rounded-lg shadow-2xl">
+            <Image src="/prof-pic.webp" alt="Profile Picture" className="xl:w-50 xl:h-50 w-30 h-30 bg-zinc-700 rounded-lg shadow-2xl" />
 
-            </img>
 
             <div className="flex flex-col items-start space-y-4 xl:space-y-8 xl:items-center">
 

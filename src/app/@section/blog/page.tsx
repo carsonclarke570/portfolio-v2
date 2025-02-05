@@ -20,7 +20,7 @@ export default async function Blog() {
                 <p className="dark:text-zinc-400 text-zinc-600 font-paragraph font-medium text-lg">
                     In my spare time, I occasionally write articles about the graphic
                     techniques I explore while developing my game, The Far Reaches.
-                    Though it's not a regular activity, I enjoy documenting the tips and
+                    Though it&apos;s not a regular activity, I enjoy documenting the tips and
                     tricks I discover along the way whenever inspiration strikes.
                 </p>
             </div>
@@ -39,7 +39,7 @@ export default async function Blog() {
     )
 }
 
-function Post({ title, date, description, link, tags }: {
+function Post({ title, date, description, link }: {
     title?: string;
     date?: string;
     description?: string;

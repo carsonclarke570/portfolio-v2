@@ -21,7 +21,7 @@ export default function Contact() {
         formState: { errors },
     } = useForm<Inputs>();
     const [disabled, setDisabled] = useState(false);
-    const [alertInfo, setAlertInfo] = useState({
+    const [_, setAlertInfo] = useState({
         display: true,
         message: 'Hello',
         type: 'success',
@@ -51,10 +51,10 @@ export default function Contact() {
 
             // Use emailjs to email contact form data
             await emailjs.send(
-                process.env["EMAILJS_SERVICE_ID"]!!,
-                process.env["EMAILJS_TEMPLATE_ID"]!!,
+                process.env["EMAILJS_SERVICE_ID"] || "",
+                process.env["EMAILJS_TEMPLATE_ID"] || "",
                 templateParams,
-                process.env["EMAILJS_PUBLIC_KEY"]!!,
+                process.env["EMAILJS_PUBLIC_KEY"] || "",
             );
 
             // Display success alert
