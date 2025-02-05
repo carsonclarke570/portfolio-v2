@@ -51,10 +51,10 @@ export default function Contact() {
 
             // Use emailjs to email contact form data
             await emailjs.send(
-                "service_6n19gbj",
-                "template_ziuff67",
+                process.env["EMAILJS_SERVICE_ID"]!!,
+                process.env["EMAILJS_TEMPLATE_ID"]!!,
                 templateParams,
-                "iFZoWIqXpxLzDgV5G",
+                process.env["EMAILJS_PUBLIC_KEY"]!!,
             );
 
             // Display success alert
