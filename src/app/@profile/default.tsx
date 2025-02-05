@@ -2,18 +2,18 @@ import Image from 'next/image'
 
 export default function Profile() {
     return (
-        <div className="flex flex-row space-x-6 xl:p-8 p-4 xl:space-x-0 xl:flex-col xl:items-center xl:px-4 xl:py-8 xl:space-y-6">
+        <div className="flex flex-row space-x-6 xl:p-8 p-4 xl:space-x-0 xl:flex-col items-center xl:px-4 xl:py-8 xl:space-y-6">
 
             {/* Picture */}
-            <Image src="/prof-pic.webp" alt="Profile Picture" className="xl:w-50 xl:h-50 w-30 h-30 bg-zinc-700 rounded-lg shadow-2xl" />
+            <Image src="/prof-pic.webp" width={200} height={200} alt="Profile Picture" className="xl:w-50 xl:h-50 w-30 h-30 bg-zinc-700 rounded-lg shadow-2xl" />
 
 
-            <div className="flex flex-col items-start space-y-4 xl:space-y-8 xl:items-center">
+            <div className="flex flex-col items-start space-y-6 sm:space-y-4 xl:space-y-8 sm:mt-0 mt-0.5 xl:items-center">
 
                 {/* Title Banner */}
-                <div className="flex flex-col items-start space-y-2 xl:items-center">
-                    <div className="dark:text-zinc-50 font-header text-2xl font-semibold">Carson Clarke-Magrab</div>
-                    <div className="dark:bg-zinc-700 dark:text-zinc-50 rounded-md px-3 py-0.5 font-paragraph text-md grow-0">Software Engineer @ Toast</div>
+                <div className="flex flex-col items-start sm:space-y-2 space-y-1 xl:items-center">
+                    <div className="dark:text-zinc-50 font-header sm:text-2xl text-xl font-semibold">Carson Clarke-Magrab</div>
+                    <div className="dark:bg-zinc-700 dark:text-zinc-50 rounded-md px-3 py-0.5 font-paragraph sm:text-base text-sm grow-0">Software Engineer @ Toast</div>
                 </div>
 
                 {/* Socials */}

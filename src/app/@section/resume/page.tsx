@@ -20,11 +20,11 @@ type Job = {
 
 export default function Resume() {
   return (
-    <div className="my-6 mx-8 space-y-8">
+    <div className="sm:my-6 my-4 sm:mx-8 mx-4 sm:space-y-8 space-y-4">
 
       <div>
         <div className="flex flex-row items-center justify-between">
-          <h1 className="dark:text-zinc-50 text-zinc-800 font-header font-semibold text-4xl">
+          <h1 className="dark:text-zinc-50 text-zinc-800 font-header font-semibold sm:text-4xl text-3xl">
             Resume
           </h1>
 
