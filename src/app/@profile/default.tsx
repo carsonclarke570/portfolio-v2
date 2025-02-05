@@ -1,13 +1,13 @@
 export default function Profile() {
     return (
-        <div className="flex flex-row space-x-6 md:p-8 p-4 xl:space-x-0 xl:flex-col xl:items-center xl:px-4 xl:py-8 xl:space-y-6">
+        <div className="flex flex-row space-x-6 xl:p-8 p-4 xl:space-x-0 xl:flex-col xl:items-center xl:px-4 xl:py-8 xl:space-y-6">
 
             {/* Picture */}
-            <img src="/prof-pic.webp" className="md:w-50 md:h-50 w-30 h-30 bg-zinc-700 rounded-lg shadow-2xl">
+            <img src="/prof-pic.webp" className="xl:w-50 xl:h-50 w-30 h-30 bg-zinc-700 rounded-lg shadow-2xl">
 
             </img>
 
-            <div className="flex flex-col items-start space-y-4 md:space-y-8 xl:items-center">
+            <div className="flex flex-col items-start space-y-4 xl:space-y-8 xl:items-center">
 
                 {/* Title Banner */}
                 <div className="flex flex-col items-start space-y-2 xl:items-center">
@@ -18,14 +18,14 @@ export default function Profile() {
                 {/* Socials */}
                 <div className="dark:text-zinc-50 font-paragraph flex flex-row space-x-3 items-center">
                     <a href="https://github.com/carsonclarke570">
-                        <GithubIcon className="w-9 h-9 fill-zinc-600 hover:fill-primary-400/80 mr-[-3px] transition-all duration-500" />
+                        <GithubIcon className="w-7 h-7 xl:w-9 xl:h-9 fill-zinc-600 hover:fill-primary-400/80 mr-[-3px] transition-all duration-500" />
                     </a>
 
                     <a href="https://www.linkedin.com/in/carsonclarke/">
-                        <LinkedInIcon className="w-8 h-8 fill-zinc-600 hover:fill-primary-400/80 transition-all duration-500" />
+                        <LinkedInIcon className="w-6 h-6 xl:w-8 xl:h-8 fill-zinc-600 hover:fill-primary-400/80 transition-all duration-500" />
                     </a>
                     <a href="https://blog.cclarke-magrab.me/">
-                        <BlogIcon className="w-8 h-8 fill-zinc-600 hover:fill-primary-400/80 mb-1 transition-all duration-500" />
+                        <BlogIcon className="w-6 h-6 xl:w-8 xl:h-8 fill-zinc-600 hover:fill-primary-400/80 mb-1 " />
                     </a>
                 </div>
             </div>

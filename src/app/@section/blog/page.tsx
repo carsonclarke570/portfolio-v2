@@ -48,8 +48,8 @@ function Post({ title, date, description, link, tags }: {
 }) {
 
     return (
-        <a className="flex flex-col border dark:border-primary-400/20 dark:bg-primary-300/5 bg-primary-50 border-primary-300 shadow-lg rounded-xl px-3 py-2 space-y-1" href={link}>
-            <div className="flex flex-col">
+        <a className="flex flex-col border dark:border-primary-400/20 dark:bg-primary-300/5 bg-primary-50 border-primary-300 shadow-lg rounded-xl sm:px-3 px-2 py-2 sm:space-y-1" href={link}>
+            <div className="flex flex-col pl-2 sm:pl-0">
                 <h2 className="font-header text-xl font-semibold text-zinc-50">{title}</h2>
                 {/* <ul className="flex flex-row">
                     <li className="dark:bg-primary-400/60 bg-primary-500 text-zinc-50 rounded-full text-center px-2 font-header text-sm">Tag 1</li>
@@ -58,8 +58,8 @@ function Post({ title, date, description, link, tags }: {
             </div>
 
 
-            <div className="flex flex-row">
-                <div className="rounded-lg min-w-24 h-24 bg-zinc-700">
+            <div className="flex flex-row pt-1 pb-1 sm:pt-0">
+                <div className="rounded-lg min-w-24 h-24 bg-zinc-700 hidden sm:inline-block">
 
                 </div>
 
