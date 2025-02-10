@@ -91,11 +91,11 @@ export default function Contact() {
             )} */}
 
             <div>
-                <h1 className="dark:text-zinc-50 text-zinc-800 font-header font-semibold sm:text-4xl text-3xl">
+                <h1 className="text-zinc-50 font-header font-semibold sm:text-4xl text-3xl">
                     Contact
                 </h1>
 
-                <div className="rounded-full w-40 h-1.5 dark:bg-primary-400 bg-primary-600 mt-2 mb-4" />
+                <div className="rounded-full w-40 h-1.5 bg-primary-400 mt-2 mb-4" />
 
             </div>
 

@@ -1,9 +1,10 @@
 import { AWSIcon, RITIcon, ToastIcon } from '@/app/icons'
 import cx from 'classnames'
+import React from 'react'
 
 type Role = {
   title: string
-  description: string[],
+  description: React.ReactNode[],
   start: Date,
   end?: Date
 }
@@ -24,22 +25,22 @@ export default function Resume() {
 
       <div>
         <div className="flex flex-row items-center justify-between">
-          <h1 className="dark:text-zinc-50 text-zinc-800 font-header font-semibold sm:text-4xl text-3xl">
+          <h1 className="text-zinc-50 font-header font-semibold sm:text-4xl text-3xl">
             Resume
           </h1>
 
           <div className="space-x-2 hidden lg:flex lg:flex-row ">
 
-            {/* <button className="flex flex-row items-center min-w-30 py-1 rounded-lg dark:bg-zinc-700">
-              <div className="w-6 h-6 dark:bg-zinc-500 mx-1" />
-              <p className="grow pr-1 font-header text-md font-semibold dark:text-zinc-200">
+            {/* <button className="flex flex-row items-center min-w-30 py-1 rounded-lg bg-zinc-700">
+              <div className="w-6 h-6 bg-zinc-500 mx-1" />
+              <p className="grow pr-1 font-header text-md font-semibold text-zinc-200">
                 Resume
               </p>
             </button>
 
-            <button className="flex flex-row items-center min-w-30 py-1 rounded-lg dark:bg-zinc-700">
-              <div className="w-6 h-6 dark:bg-zinc-500 mx-1" />
-              <p className="grow pr-1 font-header text-md font-semibold dark:text-zinc-200">
+            <button className="flex flex-row items-center min-w-30 py-1 rounded-lg bg-zinc-700">
+              <div className="w-6 h-6 bg-zinc-500 mx-1" />
+              <p className="grow pr-1 font-header text-md font-semibold text-zinc-200">
                 CV
               </p>
             </button> */}
@@ -47,7 +48,7 @@ export default function Resume() {
         </div>
 
 
-        <div className="rounded-full w-40 h-1.5 dark:bg-primary-400 bg-primary-600 mt-2 mb-4" />
+        <div className="rounded-full w-40 h-1.5 bg-primary-400 mt-2 mb-4" />
       </div>
 
       {/* Education */}
@@ -56,14 +57,14 @@ export default function Resume() {
 
         <div className='font-paragraph flex flex-row items-center space-x-4 mt-2'>
 
-          <div className='w-20 h-20 rounded-lg dark:bg-zinc-600 flex flex-row justify-evenly items-center'>
+          <div className='w-20 h-20 rounded-lg bg-zinc-600 flex flex-row justify-evenly items-center'>
             <RITIcon className='w-18 h-18 fill-zinc-50' />
           </div>
 
           <div>
             <p className='font-header text-lg font-semibold'>Rochester Institute of Technology</p>
-            <p className='dark:text-zinc-300'>B.S. in Computer Science and Computer Engineering</p>
-            <div className='flex flex-row space-x-2 italic dark:text-primary-300'>
+            <p className='text-zinc-300'>B.S. in Computer Science and Computer Engineering</p>
+            <div className='flex flex-row space-x-2 italic text-primary-300'>
               <p>Rochester, NY</p>
               <p>{'\u00B7'}</p>
               <p>2015 {'\u279D'} 2020</p>
@@ -87,7 +88,8 @@ export default function Resume() {
                 title: "Software Engineer II",
                 description: [
                   "Design and build robust cloud-based reporting and analytics tools for consuming and processing large volumes of restaurant data",
-                  "Manage team projects from conception to delivery, guiding team ceremonies to refine and scope tasks and foster a collabortive environment"
+                  "Manage team projects from conception to delivery, guiding team ceremonies to refine and scope tasks and foster a collabortive environment",
+                  ""
                 ],
                 start: new Date(2022, 2),
               },
@@ -147,7 +149,7 @@ export default function Resume() {
               {
                 title: "SDE Intern",
                 description: [
-                  " Designed and implemented a project in augmenting and improving AWS Redshift’s data ingestion capabilities"
+                  <>Designed and implemented a project in augmenting and improving <b>AWS Redshift's</b> data ingestion capabilities</>
                 ],
                 start: new Date(2020, 5),
                 end: new Date(2020, 7),
@@ -208,8 +210,8 @@ function JobSection({ job }: {
         </div>
 
         <div className="space-y-[-4px]">
-          <h3 className="font-header text-lg font-semibold dark:text-zinc-50">{job.company}</h3>
-          <p className="font-paragraph text-md italic dark:text-zinc-300">{job.location}</p>
+          <h3 className="font-header text-lg font-semibold text-zinc-50">{job.company}</h3>
+          <p className="font-paragraph text-md italic text-zinc-300">{job.location}</p>
         </div>
       </div>
 
@@ -228,13 +230,13 @@ function JobSection({ job }: {
                 <div className="mt-2">
                   <div className="space-y-[-3px]">
                     <h4 className="font-semibold">{role.title}</h4>
-                    <p className="italic dark:text-primary-300">{dates[0]} {'\u279D'} {dates[1]}</p>
+                    <p className="italic text-primary-300">{dates[0]} {'\u279D'} {dates[1]}</p>
                   </div>
 
                   <ul className="list-disc ml-8">
                     {role.description.map((desc, idx) => {
                       return (
-                        <li key={desc + idx}>{desc}</li>
+                        <li key={role.title + idx}>{desc}</li>
                       )
                     })}
                   </ul>

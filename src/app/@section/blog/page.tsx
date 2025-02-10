@@ -11,13 +11,13 @@ export default async function Blog() {
         <div className="sm:my-6 my-4 sm:mx-8 mx-4 sm:space-y-8 space-y-4">
 
             <div>
-                <h1 className="dark:text-zinc-50 text-zinc-800 font-header font-semibold sm:text-4xl text-3xl">
+                <h1 className="text-zinc-50 font-header font-semibold sm:text-4xl text-3xl">
                     Blog
                 </h1>
 
-                <div className="rounded-full w-40 h-1.5 dark:bg-primary-400 bg-primary-600 mt-2 mb-4" />
+                <div className="rounded-full w-40 h-1.5 bg-primary-400 mt-2 mb-4" />
 
-                <p className="dark:text-zinc-400 text-zinc-600 font-paragraph font-medium text-lg">
+                <p className="text-zinc-400 font-paragraph font-medium text-lg">
                     In my spare time, I occasionally write articles about the graphic
                     techniques I explore while developing my game, The Far Reaches.
                     Though it&apos;s not a regular activity, I enjoy documenting the tips and
@@ -48,11 +48,11 @@ function Post({ title, date, description, link }: {
 }) {
 
     return (
-        <a className="flex flex-col border dark:border-primary-400/20 dark:bg-primary-300/5 bg-primary-50 border-primary-300 shadow-lg rounded-xl sm:px-3 px-2 py-2 sm:space-y-1" href={link}>
+        <a className="flex flex-col border border-primary-400/20 bg-primary-300/5 shadow-lg rounded-xl sm:px-3 px-2 py-2 sm:space-y-1" href={link}>
             <div className="flex flex-col pl-2 sm:pl-0">
                 <h2 className="font-header text-xl font-semibold text-zinc-50">{title}</h2>
                 {/* <ul className="flex flex-row">
-                    <li className="dark:bg-primary-400/60 bg-primary-500 text-zinc-50 rounded-full text-center px-2 font-header text-sm">Tag 1</li>
+                    <li className="bg-primary-400/60 bg-primary-500 text-zinc-50 rounded-full text-center px-2 font-header text-sm">Tag 1</li>
                 </ul> */}
 
             </div>
@@ -65,7 +65,7 @@ function Post({ title, date, description, link }: {
 
                 <div className="font-paragraph px-2 space-y-1 mt-0.5">
                     <p className="bg-zinc-700 rounded w-fit px-2 text-zinc-300">{date}</p>
-                    <p className="dark:text-zinc-400 italic text-primary-800 font-paragraph text-md font-medium">{description}</p>
+                    <p className="text-zinc-400 italic font-paragraph text-md font-medium">{description}</p>
 
 
                 </div>

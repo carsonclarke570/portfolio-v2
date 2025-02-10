@@ -29,14 +29,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${openSans.variable} ${sourceSans.variable} antialiased bg-white text-zinc-800 dark:bg-zinc-950 dark:text-zinc-100 flex flex-col items-center xl:h-lvh`}
+        className={`${openSans.variable} ${sourceSans.variable} antialiased bg-zinc-950 text-zinc-100 flex flex-col items-center xl:h-lvh`}
       >
         <ThemeProvider>
           <div className="xl:flex xl:flex-row w-full xl:max-w-[1200px] lg:max-w-[1000px] md:max-w-[700px] sm:max-w-[600] px-2 sm:px-4 mt-4 sm:mt-12 xl:space-x-4 xl:space-y-0 space-y-4 md:mb-12 mb-20 xl:h-lvh xl:overflow-hidden">
 
             {/* Profile */}
             {/* <aside className="flex-none"> */}
-            <div className="xl:flex-none xl:w-1/4 border h-fit rounded-xl dark:border-zinc-700 dark:bg-zinc-900 border-zinc-400">
+            <div className="xl:flex-none xl:w-1/4 border h-fit rounded-xl border-zinc-700 bg-zinc-900">
               {profile}
             </div>
 
@@ -44,7 +44,7 @@ export default function RootLayout({
             {/* Section */}
             <div className="xl:overflow-y-scroll xl:relative w-full">
 
-              <div className="xl:flex-1 border rounded-xl dark:border-zinc-700 dark:bg-zinc-900 border-zinc-400">
+              <div className="xl:flex-1 border rounded-xl border-zinc-700 bg-zinc-900 ">
                 {section}
               </div>
 

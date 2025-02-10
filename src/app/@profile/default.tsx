@@ -12,12 +12,12 @@ export default function Profile() {
 
                 {/* Title Banner */}
                 <div className="flex flex-col items-start sm:space-y-2 space-y-1 xl:items-center">
-                    <div className="dark:text-zinc-50 font-header sm:text-2xl text-xl font-semibold">Carson Clarke-Magrab</div>
-                    <div className="dark:bg-zinc-700 dark:text-zinc-50 rounded-md px-3 py-0.5 font-paragraph sm:text-base text-sm grow-0">Software Engineer @ Toast</div>
+                    <div className="text-zinc-50 font-header sm:text-2xl text-xl font-semibold">Carson Clarke-Magrab</div>
+                    <div className="bg-zinc-700 text-zinc-50 rounded-md px-3 py-0.5 font-paragraph sm:text-base text-sm grow-0">Software Engineer @ Toast</div>
                 </div>
 
                 {/* Socials */}
-                <div className="dark:text-zinc-50 font-paragraph flex flex-row space-x-3 items-center">
+                <div className="text-zinc-50 font-paragraph flex flex-row space-x-3 items-center">
                     <a href="https://github.com/carsonclarke570">
                         <GithubIcon className="w-7 h-7 xl:w-9 xl:h-9 fill-zinc-600 hover:fill-primary-400/80 mr-[-3px] transition-all duration-500" />
                     </a>
