@@ -1,5 +1,9 @@
 import Parser from "rss-parser";
 
+type CustomRSSContent = {
+    previewImg?: string
+}
+
 export default async function Blog() {
     const parser = new Parser();
     const body = await parser.parseURL('https://blog.cclarke-magrab.me/index.xml')
@@ -29,9 +33,11 @@ export default async function Blog() {
                 {items.map((item, idx) => {
 
                     const date = new Date(item.pubDate ? item.pubDate : "");
+                    const encodedContent: CustomRSSContent = JSON.parse(item['content:encoded'])
+                    const imageUrl = encodedContent.previewImg ? "https://blog.cclarke-magrab.me" + encodedContent.previewImg.substring(1) : undefined
 
                     return (
-                        <Post key={idx} title={item.title} date={date.toLocaleDateString()} description={item.contentSnippet} link={item.link} tags={[]} />
+                        <Post key={idx} title={item.title} date={date.toLocaleDateString()} description={item.contentSnippet} link={item.link} tags={[]} imageUrl={imageUrl} />
                     )
                 })}
             </div>
@@ -39,12 +45,13 @@ export default async function Blog() {
     )
 }
 
-function Post({ title, date, description, link }: {
+function Post({ title, date, description, link, imageUrl }: {
     title?: string;
     date?: string;
     description?: string;
     link?: string;
     tags: string[];
+    imageUrl?: string;
 }) {
 
     return (
@@ -59,15 +66,13 @@ function Post({ title, date, description, link }: {
 
 
             <div className="flex flex-row pt-1 pb-1 sm:pt-0">
-                <div className="rounded-lg min-w-24 h-24 bg-zinc-700 hidden sm:inline-block">
-
+                <div className="rounded-lg min-w-24 w-24 h-24 bg-zinc-700 hidden sm:inline-block overflow-hidden">
+                    {imageUrl && <img src={imageUrl} className="w-full h-full object-cover" />}
                 </div>
 
                 <div className="font-paragraph px-2 space-y-1 mt-0.5">
                     <p className="bg-zinc-700 rounded w-fit px-2 text-zinc-300">{date}</p>
                     <p className="text-zinc-400 italic font-paragraph text-md font-medium">{description}</p>
-
-
                 </div>
             </div>
         </a>
