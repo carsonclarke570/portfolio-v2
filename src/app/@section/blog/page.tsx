@@ -1,4 +1,5 @@
 import Parser from "rss-parser";
+import Image from "next/image";
 
 type CustomRSSContent = {
     previewImg?: string
@@ -67,7 +68,7 @@ function Post({ title, date, description, link, imageUrl }: {
 
             <div className="flex flex-row pt-1 pb-1 sm:pt-0">
                 <div className="rounded-lg min-w-24 w-24 h-24 bg-zinc-700 hidden sm:inline-block overflow-hidden">
-                    {imageUrl && <img src={imageUrl} className="w-full h-full object-cover" />}
+                    {imageUrl && <Image alt="" src={imageUrl} width={96} height={96} className="w-full h-full object-cover" />}
                 </div>
 
                 <div className="font-paragraph px-2 space-y-1 mt-0.5">

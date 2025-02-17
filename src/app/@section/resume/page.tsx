@@ -149,7 +149,7 @@ export default function Resume() {
               {
                 title: "SDE Intern",
                 description: [
-                  <>Designed and implemented a project in augmenting and improving <b>AWS Redshift's</b> data ingestion capabilities</>
+                  <>Designed and implemented a project in augmenting and improving <b>AWS Redshift&apos;s</b> data ingestion capabilities</>
                 ],
                 start: new Date(2020, 5),
                 end: new Date(2020, 7),
